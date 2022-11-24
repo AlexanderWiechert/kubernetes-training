@@ -1,0 +1,18 @@
+{
+  "name": "kubernetes-training",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.33.0",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "slidev-theme-geist": "^0.8.1",
+    "slidev-theme-light-icons": "^1.0.2",
+    "slidev-theme-unicorn": "^1.1.1",
+    "slidev-theme-vuetiful": "^0.3.1"
+  }
+}
