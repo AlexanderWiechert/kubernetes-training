@@ -11,10 +11,6 @@ src: ./chapters/1.2.kubernetes.architecture/slides.md
 ---
 
 ---
-src: ./chapters/1.3.running.kubernetes/slides.md
----
-
----
 src: ./chapters/1.4.running.containers/slides.md
 ---
 

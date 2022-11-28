@@ -49,8 +49,7 @@ This is the most common way to deploy an stateless application.
 
 * The Deployment is the same as before, below is the Service definition:
 
-    ```shell
-    $ cat kubernetes/06.nginx-service/nginx-service.yaml
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:
@@ -86,7 +85,7 @@ We used `LoadBalancer`, but since we're in minikube and don't have a cloud provi
 * Let's deploy it:
 
     ```shell
-    $ kubectl create -f kubernetes/06.nginx-service/
+    $ kubectl create -f 06.nginx-service/
     ```
 
 * Get the Service:
@@ -163,7 +162,7 @@ Let's create two Pods and talk to each other
 * First create an `nginx` pod:
 
     ```shell
-    $ kubectl create -f kubernetes/02.single-container-pod/
+    $ kubectl create -f 02.single-container-pod/
     ```
 
 * Get the IP of the Pod
@@ -182,7 +181,7 @@ Let's create two Pods and talk to each other
 * Now cleanup
 
     ```shell
-    $ kubectl delete -f kubernetes/02.single-container-pod/
+    $ kubectl delete -f 02.single-container-pod/
     ```
 
 ---
@@ -215,7 +214,7 @@ Using DNS we can simply do:
 Let's cleanup:
 
     ```shell
-    $ kubectl delete -f kubernetes/06.nginx-service/
+    $ kubectl delete -f 06.nginx-service/
     ```
 
 ---

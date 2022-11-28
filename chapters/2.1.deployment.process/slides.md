@@ -53,8 +53,7 @@ The objective of Deployment is to handle this process.
 
 * Let's use a Deployment definition to deploy 2 Nginx instances in our Cluster.
 
-    ```shell
-    $ cat kubernetes/05.nginx-deployment/nginx-deployment.yaml
+    ```yaml
     apiVersion: extensions/v1beta1
     kind: Deployment
     metadata:
@@ -83,7 +82,7 @@ The objective of Deployment is to handle this process.
 * Let's deploy it:
 
     ```shell
-    $ kubectl create -f kubernetes/05.nginx-deployment/
+    $ kubectl create -f 05.nginx-deployment/
     ```
 
 You'll see that the Deployment has generated a Replica Set and that in turn generated 2 Pods.

@@ -45,8 +45,7 @@ To do this we introduce two new API resources
 
 * This is a PersistentVolumeClaim:
 
-    ```shell
-    $ cat kubernetes/09.myclaim-pvc/myclaim-pvc.yaml
+    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
@@ -64,7 +63,7 @@ To do this we introduce two new API resources
 * Let's create it:
 
     ```shell
-    $ kubectl create -f kubernetes/09.myclaim-pvc/
+    $ kubectl create -f 09.myclaim-pvc/
     ```
 
 ---
@@ -155,7 +154,7 @@ But the PVC is the same as it is abstracted from the storage provider.
 * Let's deploy it:
 
     ```shell
-    $ kubectl create -f kubernetes/10.ghost/
+    $ kubectl create -f 10.ghost/
     ```
 
 * Ghost's Items
@@ -167,5 +166,5 @@ But the PVC is the same as it is abstracted from the storage provider.
 * Let's delete it:
 
     ```shell
-    $ kubectl delete -f kubernetes/10.ghost/
+    $ kubectl delete -f 10.ghost/
     ```

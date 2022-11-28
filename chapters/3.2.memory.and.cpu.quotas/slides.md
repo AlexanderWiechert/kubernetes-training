@@ -45,8 +45,7 @@ If a container exceeds its RAM limit, it is terminated. If a container exceeds i
 
 * Here is an example of assigning CPU and RAM resources:
 
-    ```shell
-    $ cat kubernetes/11.cpu-ram-limited-pod/cpu-ram-limited-pod.yaml
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -77,7 +76,7 @@ It also sets upper limits of `1 cpu` and `128 mebibytes` of RAM.
 * Let's deploy it:
 
     ```shell
-    $ kubectl create -f kubernetes/11.cpu-ram-limited-pod/
+    $ kubectl create -f 11.cpu-ram-limited-pod/
     ```
 
 * You can check the usage of CPU and Memory per node by describing nodes:

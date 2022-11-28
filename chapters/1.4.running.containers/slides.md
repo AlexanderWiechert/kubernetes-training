@@ -27,15 +27,16 @@ drawings:
 
 <img class="absolute top-80 left-75 w-100" src="/chapters/1.4.running.containers/running.png" />
 
-
 ---
 
-# Section 1.4: Running Containers
+# Clone repository
 
-In this section we'll learn how to run our first containers in Kubernetes and we'll learn about:
+* Clone the repository with the examples
 
-* Pods
-* ReplicaSets
+    ```shell
+    git clone https://github.com/dkapanidis/training
+    cd training/kubernetes/101/
+    ```
 
 ---
 
@@ -70,8 +71,7 @@ Why not support affinity-based co-scheduling of containers?
 
 * Let's see a simple hello-world Pod:
 
-    ```shell
-    $ cat kubernetes/01.hello-world/hello-world-pod.yaml
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -95,13 +95,13 @@ Why not support affinity-based co-scheduling of containers?
 * Let's create the Pod with `kubectl` CLI. In order to create it:
 
     ```shell
-    $ kubectl create -f kubernetes/01.hello-world/hello-world-pod.yaml
+    $ kubectl create -f 01.hello-world/
     ```
 
-* Let's see the Pods (`-a` is to also see the Completed ones):
+* Let's see the Pods:
 
     ```shell
-    $ kubectl get pods -a
+    $ kubectl get pods
     ```
 
 * To see the logs:
@@ -113,7 +113,7 @@ Why not support affinity-based co-scheduling of containers?
 * Let's delete the Pod using the file reference:
 
     ```shell
-    $ kubectl delete -f kubernetes/01.hello-world/hello-world-pod.yaml
+    $ kubectl delete -f 01.hello-world/
     ```
 
 * You can also delete a Pod using the name reference:
@@ -129,8 +129,7 @@ Why not support affinity-based co-scheduling of containers?
 
 * A more useful example is a long running container. We'll now create a pod with one container that will run `nginx`.
 
-    ```shell
-    $ cat kubernetes/02.single-container-pod/single-container-pod.yaml
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -151,7 +150,7 @@ Why not support affinity-based co-scheduling of containers?
 * Let's deploy it (You can reference a directory to the `create` command):
 
     ```shell
-    $ kubectl create -f kubernetes/02.single-container-pod/
+    $ kubectl create -f 02.single-container-pod/
     ```
 
 You'll see that the Pod once it finishes to download the image it is in `Running` State and is staying running.
@@ -187,8 +186,7 @@ In our example we'll use a `nginx` together with an `alpine` container that will
 
 * Multi-container pod:
 
-    ```shell
-    $ cat kubernetes/03.multi-container-pod/multi-container-pod.yaml
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -208,7 +206,7 @@ In our example we'll use a `nginx` together with an `alpine` container that will
 * Let's deploy it:
 
     ```shell
-    $ kubectl create -f kubernetes/03.multi-container-pod/
+    $ kubectl create -f 03.multi-container-pod/
     ```
 
 ---
@@ -263,8 +261,7 @@ We'll use the same example of Nginx before but now we'll run multiple instances.
 
 * Replica Sets:
 
-    ```shell
-    $ cat kubernetes/04.nginx-replicaset/nginx-replicaset.yaml
+    ```yaml
     apiVersion: extensions/v1beta1
     kind: ReplicaSet
     metadata:
@@ -295,7 +292,7 @@ We'll use the same example of Nginx before but now we'll run multiple instances.
 * Let's deploy it:
 
     ```shell
-    $ kubectl create -f kubernetes/04.nginx-replicaset/
+    $ kubectl create -f 04.nginx-replicaset/
     ```
 
 * Let's see the Pods:
@@ -351,12 +348,3 @@ So if I loose a node, the Pods there will be rescheduled to other Nodes automati
     ```
 
 Deleting the ReplicaSet it propagates the deletion of the Pods it manages
-
----
-
-# Section 1.4: Running Containers
-
-In this section learned how to run our first containers in Kubernetes and the following resources in the Kubernetes API:
-
-* Pods
-* ReplicaSets

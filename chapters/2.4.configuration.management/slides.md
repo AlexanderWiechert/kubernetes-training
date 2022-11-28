@@ -56,8 +56,7 @@ Why configurable containers, why not store it inside the image?
 
 * Let's create a Pod with an environment variable
 
-    ```shell
-    $ cat kubernetes/07.env-pod/env-pod.yaml
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -79,7 +78,7 @@ Why configurable containers, why not store it inside the image?
 * Let's create the Pod:
 
     ```shell
-    $ kubectl create -f kubernetes/07.env-pod/env-pod.yaml
+    $ kubectl create -f 07.env-pod/
     ```
 
 * Let's see the logs:
@@ -102,8 +101,7 @@ Let's create a Pod with a mounted file.
 
 * The content of the file can be stored at a ConfigMap:
 
-    ```shell
-    $ cat kubernetes/08.volumemount-configmap/volumemount-configmap.yaml
+    ```yaml
     apiVersion: v1
     kind: ConfigMap
     metadata:
@@ -122,8 +120,7 @@ Let's create a Pod with a mounted file.
 
 * And in a Pod we can reference that ConfigMap to bind mount it in a directory:
 
-    ```shell
-    $ cat kubernetes/08.volumemount-configmap/volumemount-pod.yaml
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -153,7 +150,7 @@ Let's create a Pod with a mounted file.
 * Let's create the Pod:
 
     ```shell
-    $ kubectl create -f kubernetes/08.volumemount-configmap/
+    $ kubectl create -f 08.volumemount-configmap/
     ```
 
 Let's see the logs:
@@ -165,5 +162,5 @@ Let's see the logs:
 Let's cleanup:
 
     ```shell
-    $ kubectl delete -f kubernetes/08.volumemount-configmap/
+    $ kubectl delete -f 08.volumemount-configmap/
     ```
